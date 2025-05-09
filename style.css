@@ -1,0 +1,260 @@
+/* =========================
+   CSS Reset & বেসিক স্টাইলিং
+========================= */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+/* =========================
+   হেডার স্টাইলিং
+========================= */
+header {
+  background: linear-gradient(90deg, #FF7E5F, #FD3A69); /* নতুন আকর্ষণীয় রঙ */
+  color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-bottom: 4px solid #ffd700;
+  position: relative;
+}
+
+/* হেডারের কনটেইনার */
+.header-center {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* লোগো বাম পাশে থাকবে */
+}
+
+/* লোগো স্টাইলিং */
+.logo {
+  z-index: 1;
+}
+.logo img {
+  max-height: 100px;
+  width: auto;
+}
+
+/* সাইট টাইটেলকে হেডারের মাঝে রাখার জন্য */
+.site-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3.0rem;
+  font-weight: 700;
+  color: #fff;
+  z-index: 1;
+}
+
+/* =========================
+   ন্যাভিগেশন বার স্টাইলিং
+========================= */
+nav {
+  display: flex;
+  justify-content: center; /* লিঙ্কগুলোকে পেইজের মাঝখানে এনে দেয় */
+  gap: 2rem;
+  margin-top: 1rem;
+  animation: slideIn 0.8s ease forwards;
+}
+
+nav a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #ffd700;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd700;
+  transform: translateY(-3px);
+}
+
+nav a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ন্যাভিগেশনের এনিমেশন কী ফ্রেম */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   মেইন কন্টেন্ট ও সাইটবার - সাইড-বাই-সাইড লেআউট
+========================= */
+main {
+  float: left;
+  width: 65%;
+  margin: 2rem 1rem 2rem 0;
+}
+
+main img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* সাইটবার স্টাইলিং */
+.sidebar {
+  float: right;
+  width: 30%;
+  background: #fff;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2a5298;
+  border-bottom: 2px solid #2a5298;
+  padding-bottom: 0.5rem;
+}
+
+.sidebar a {
+  display: block;
+  color: #1e3c72;
+  text-decoration: none;
+  margin: 0.5rem 0;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: #2a5298;
+  transform: scale(1.05);
+}
+
+/* =========================
+   ফুটার স্টাইলিং
+========================= */
+footer {
+  clear: both;
+  background: #1e3c72;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+/* =========================
+   কন্টাক্ট পেজের স্টাইলিং
+========================= */
+.contact-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 2rem auto;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item a {
+  color: #2a5298;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #1e3c72;
+}
+
+/* =========================
+   এবারাউট পেজের টেবিল স্টাইলিং
+========================= */
+table {
+  width: 90%;
+  margin: 2rem auto;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table th {
+  background: #2a5298;
+  color: #fff;
+}
+
+table tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* =========================
+   হেডিংস এর সাধারণ স্টাইলিং
+========================= */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Segoe UI", sans-serif;
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   রেসপন্সিভ ডিজাইন
+========================= */
+@media (max-width: 768px) {
+  /* মেইন ও সাইটবারকে পুনরায় স্ট্যাক করা */
+  main, .sidebar {
+    float: none;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  
+  .header-center {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .site-title {
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+  }
+  
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
